@@ -10,7 +10,7 @@ import 'bulma/css/bulma.css';
 import './styles.scss';
 
 const store = createStore(reducer);
-console.log("State =>", store.getState());
+// console.log("State of the Store =>", store.getState());
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(

@@ -1,6 +1,6 @@
-import React from "react";
+import { addNewFeature, removeFeature } from "../actions/actions";
 
-const initialState = {
+export const initialState = {
     additionalPrice: 0,
     car: {
       price: 26395,
@@ -18,24 +18,26 @@ const initialState = {
   };
 
   export const reducer = (state = initialState, action) => {
-      console.log(state, action);
+    // console.log("Reducer state: ", state);
       switch(action.type) {
         case "ADD_NEW_FEATURE":
             return {
                 ...state,
                 car: {
                     ...state.car,
-                    features: [...state.car.features]
+                    features: [...state.car.features, addNewFeature]
                 }
-            }
+            };
         case "REMOVE_FEATURE":
             return {
                 ...state,
                     car: {
                         ...state.car,
-                        features: [...state.car.features]
+                        features: [...state.car.features, removeFeature]
                     }
-                }
+                };
+        default:
+            return state;
       }
 }
 

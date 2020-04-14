@@ -1,13 +1,20 @@
-// An action creator is a function that "creates" actions!
-// AKA a function that returns an action object
 
-// action creator
-export const addNewFeature = () => {
-    console.log("function running");
-    // the returned object is an action
-    return { type: "ADD_NEW_FEATURE" };
+export const ADD_NEW_FEATURE = "ADD_NEW_FEATURE";
+
+export const addNewFeature = item => {
+    // console.log("add new feature: ", item)
+    return {
+        type: ADD_NEW_FEATURE,
+        payload: item 
+    };
   };
+
+  export const REMOVE_FEATURE = "REMOVE_FEATURE;"
   
-  export const removeFeature = () => {
-    return { type: "REMOVE_FEATURE"};
+  export const removeFeature = item => {
+    // console.log("remove feature: ", item)
+    return { 
+        type: "REMOVE_FEATURE",
+        payload: item
+    };
   };
