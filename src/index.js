@@ -9,7 +9,7 @@ import {reducer} from "./reducers/reducer";
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
-const store = createStore(reducer);
+export const store = createStore(reducer);
 // console.log("State of the Store =>", store.getState());
 
 const rootElement = document.getElementById('root');
