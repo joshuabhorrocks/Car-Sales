@@ -4,27 +4,26 @@ import {connect} from "react-redux";
 import {addNewFeature} from "../actions/actions"
 
 const AdditionalFeature = props => {
-  const addNewFeature = () => {
-    props.addNewFeature(props.item);
-  };
-
-  handleChanges = e => props.setState({item: e.target.value});
-
-  {console.log("Add New Feature: ", props.addNewFeature())}
+  // console.log("Additional Feature: ", props);
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button className="button" onChange={handleChanges} value={props.item} onClick={addNewFeature()}>Add</button>
-      {props.feature.name} (+{props.feature.price})
+      <button className="button">Add</button>
+      {props.featureProps.name} (+{props.featureProps.price})
+      {/* {console.log("additional feature: ", props.featureProps)} */}
     </li>
   );
 };
 
 const mapStateToProps = state => {
+  // console.log("State to props", state)
   return {
+    featureProps: state.additionalFeatures
   }
 }
 export default connect(
   mapStateToProps,
   {addNewFeature}
 )(AdditionalFeature);
+
+// onClick={() => props.addNewFeature(props.item)}

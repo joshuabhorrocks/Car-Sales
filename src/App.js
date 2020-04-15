@@ -11,12 +11,12 @@ const App = (props) => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.carOnProps} />
-        <AddedFeatures car={props.carOnProps} />
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={props} />
-        <Total car={props.car} additionalPrice={props.additionalPriceOnProps} />
+        <Total car={props.car} additionalPrice={props.additionalFeatures} />
       </div>
     </div>
   );
@@ -25,8 +25,6 @@ const App = (props) => {
 const mapStateToProps = state => {
   // {console.log("State to props: ", state)}
   return {
-    carOnProps: state.car,
-    additionalFeaturesOnProps: state.additionalFeatures
   }
 }
 export default connect(

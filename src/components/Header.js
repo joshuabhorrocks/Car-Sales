@@ -6,16 +6,18 @@ const Header = props => {
   return (
     <>
       <figure className="image is-128x128">
-        <img src={props.car.image} alt={props.car.name} />
+        <img src={props.carProps.image} alt={props.carProps.name} />
       </figure>
-      <h2>{props.car.name}</h2>
-      <p>Amount: ${props.car.price}</p>
+      <h2>{props.carProps.name}</h2>
+      <p>Amount: ${props.carProps.price}</p>
     </>
   );
 };
 
 const mapStateToProps = state => {
+  // {console.log("State to props: ", state)}
   return {
+    carProps: state.car
   }
 }
 export default connect(
