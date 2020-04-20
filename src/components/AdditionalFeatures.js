@@ -1,13 +1,15 @@
 import React from 'react';
+
 import AdditionalFeature from './AdditionalFeature';
 
 const AdditionalFeatures = props => {
+  // {console.log("Additonal Features props: ", props)}
   return (
     <div className="content">
       <h4>Additional Features</h4>
-      {props.additionalFeatures.length ? (
+      {props.AdditionalFeatures.length ? (
         <ol type="1">
-          {props.additionalFeatures.map(item => (
+          {props.AdditionalFeatures.map(item => (
             <AdditionalFeature key={item.id} feature={item} />
           ))}
         </ol>
@@ -17,5 +19,6 @@ const AdditionalFeatures = props => {
     </div>
   );
 };
+
 
 export default AdditionalFeatures;
